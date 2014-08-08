@@ -16,7 +16,7 @@ tail(dataset)
 data <- dataset[(dataset$Date == "1/2/2007" | dataset$Date == "2/2/2007"),]
 dim(data)
 levels(data$Global_active_power) ## found out there are values as "?"
-
+png(filename = "plot3.png", width = 480, height = 480, units = "px")
 x <- strptime(paste(data$Date,data$Time), "%d/%m/%Y %H:%M:%S")
 
 # convert factor class to numeric to make plot
@@ -31,4 +31,5 @@ points(x,y2,col="red", type="l")
 points(x,y3,col="blue", type ="l")
 
 legend("topright", legend=c("-- Sub_metering_1", "-- Sub_metering_2", "-- Sub_metering_3"), text.col=c("black", "red", "blue"))
+dev.off()
   
