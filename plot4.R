@@ -26,7 +26,7 @@ par(mar=c(1,1,1,1))
 # convert factor class to numeric to make plot
 y1 <- as.numeric(as.character(data$Global_active_power)) ## factor to numeric 
 par(mar=c(4,4,3,2))
-plot(x, y1, type = "l", ylab="Global Active Power")
+plot(x, y1, type = "l", xlab= " ", ylab="Global Active Power")
 
 ## 2) top right plot
 y2 <- as.numeric(as.character(data$Voltage))
